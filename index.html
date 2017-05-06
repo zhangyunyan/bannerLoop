@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./public.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="loop">
+    <ul class="img">
+        <li>
+            <a href="#" target="_blank"><img src="./images/banner1.jpg" ></a></li>
+        <li>
+            <a href="#" target="_blank"><img src="./images/banner2.jpg"></a></li>
+        <li>
+            <a href="#" target="_blank"><img src="./images/banner3.jpg"></a></li>
+    </ul>
+    <ul class="tab">
+        <li class="">
+            <a href="#"></a>
+        </li>
+        <li class="">
+            <a href="#"></a>
+        </li>
+        <li class="">
+            <a href="#"></a>
+        </li>
+    </ul>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    function stops() {
+        return false;
+    }
+    document.oncontextmenu = stops;
+    var timer;
+    $(".img>li").eq(0).show();
+    $(".tab>li").eq(0).addClass("on");
+    function change(n) {
+        timer = window.setInterval(function () {
+            $(".img>li").hide();
+            $(".img>li").eq(n).show();
+            $(".tab>li").removeClass("on");
+            $(".tab>li").eq(n).addClass("on");
+            if (n >= 2) {
+                n = -1
+            }
+            n++;
+        }, 2000);
+    }
+    $(function () {
+        $(".tab>li").each(function (index) {
+            $(".tab>li").eq(index).hover(function () {
+                clearInterval(timer);
+                $(".tab>li").eq(index).addClass("on");
+                $(".tab>li").eq(index).siblings().removeClass("on");
+                $(".img>li").hide();
+                $(".img>li").eq(index).show();
+            },function () {
+                change(index);
+            })
+        })
+        clearInterval(timer);
+        change(0);
+    })
+</script>
+</body>
+</html>

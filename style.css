@@ -1,0 +1,38 @@
+.loop {
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+    position: relative;
+}
+.loop .img {
+    position: relative;
+}
+.loop .img li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 490px;
+    display: none;
+}
+.loop .tab {
+    position: absolute;
+    float: right;
+    width: 150px;
+    left: 50%;
+    margin-left:-75px ;
+    bottom: 20px;
+}
+.loop .tab li{
+    float: left;
+}
+.loop .tab li.on a {
+    background-color: #572707;
+}
+.loop .tab li a {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 17.5px;
+}

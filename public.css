@@ -1,0 +1,43 @@
+body, header, ul, li, dl, ol, dt, dd, article, menu, section, footer, div, p, h1, h2, h3, h4, h5, input, img {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "微软雅黑", arial;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #4999f2;
+}
+
+img {
+    height: auto;
+    display: block;
+    border: none;
+}
+
+ul, li, ol, dl, dt, dd {
+    list-style: none;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+
+}
+
+.clearfix {
+    zoom: 1;
+}
